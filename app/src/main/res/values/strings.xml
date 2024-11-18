@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TrabajoUnidad3</string>
+    <string name="filtros:">Filtros</string>
+    <string name="filtros:">Filtros:</string>
+    <string name="filtros">FILTROS:</string>
+    <string name="arriba">Partes de arriba</string>
+    <string name="abajo">Partes de abajo</string>
+    <string name="zapatos">Zapatos</string>
+</resources>

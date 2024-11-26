@@ -57,18 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
 //Añado las prendas en un bloque try catch por si hubiera algún problema a la hora de crearlas o añadirlas
         try {
-            prendas.add(new PartesDeArriba(R.drawable.partedearriba1, "Negro", "L", "TOP NEGRO", "arriba", null, "Crop"));
-            prendas.add(new PartesDeArriba(R.drawable.partedearriba2, "Blanco", "L", "TOP BLANCO", "arriba", null, "Regular"));
-            prendas.add(new PartesDeArriba(R.drawable.partedearriba3, "Negro", "L", "TOP NEGRO ASIMÉTRICO", "arriba", null, "Asimétrico"));
-            prendas.add(new PartesDeArriba(R.drawable.partedearriba4, "Blanco", "XL", "CAMISA BLANCA", "arriba", null, "Oversize"));
-            prendas.add(new PartesDeAbajo(R.drawable.partedeabajo1, "Blanco", "42", "PANTALÓN BLANCO", "abajo", null, "Straight", "Alto"));
-            prendas.add(new PartesDeAbajo(R.drawable.partedeabajo2, "Negro", "42", "PANTALÓN NEGRO", "abajo", null, "Straight", "Alto"));
-            prendas.add(new PartesDeAbajo(R.drawable.partedeabajo3, "Rosa", "42", "PANTALÓN ROSA", "abajo", null, "Cargo", "Medio"));
-            prendas.add(new PartesDeAbajo(R.drawable.partedeabajo4, "Negro", "40", "PANTALÓN POLIPIEL NEGRO", "abajo", null, "Straight", "Alto"));
-            prendas.add(new Zapatos(R.drawable.zapatos1, "Negro", "38,5", "NEW BALANCE 327", "zapatos", null));
-            prendas.add(new Zapatos(R.drawable.zapatos2, "Rojo", "39", "NIKE AIR JORDAN", "zapatos", null));
-            prendas.add(new Zapatos(R.drawable.zapatos3, "Gris", "38,5", "ADIDAS CAMPUS 2000", "zapatos", null));
-            prendas.add(new Zapatos(R.drawable.zapatos4, "Lila y rosa", "38", "NIKE DUNK INDIGO HAZE", "zapatos", null));
+
+//            for (int i = 0; i < 100; i++) {
+//                prendas.add(new PartesDeArriba(R.drawable.partedearriba1, "Negro", "L", "TOP NEGRO", "arriba", null, "Crop"));
+//            }
+
+//            for (int i = 0; i < 1000; i++) {
+//                prendas.add(new PartesDeArriba(R.drawable.partedearriba1, "Negro", "L", "TOP NEGRO", "arriba", null, "Crop"));
+//            }
+
+            for (int i = 0; i < 10000; i++) {
+                prendas.add(new PartesDeArriba(R.drawable.partedearriba1, "Negro", "L", "TOP NEGRO", "arriba", null, "Crop"));
+            }
+
         } catch (Exception e) {
             Log.e(TAG, "Error al rellenar el array: " + e.getMessage());
         }

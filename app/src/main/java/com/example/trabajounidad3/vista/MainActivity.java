@@ -35,7 +35,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-
     private Switch arriba;
     private Switch abajo;
     private Switch zapatos;

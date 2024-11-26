@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
 //Gestiono la selección de la opción del menú.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(this, "Se ha seleccionado la opción '"+item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Se ha seleccionado la opción '"+item.getTitle()+"'. Esta opción estará disponible próximamente", Toast.LENGTH_SHORT).show();
         Log.i(TAG, "En el metodo onOptionsItemSelected lanzando el toast");
         return true;
     }

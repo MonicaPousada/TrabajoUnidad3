@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TraballoUnidade3</string>
+    <string name="filtros">FILTROS:</string>
+    <string name="arriba">Partes de arriba</string>
+    <string name="abajo">Partes de abaixo</string>
+    <string name="zapatos">Zapatos</string>
+    <string name="btnUso">Rexistrar uso</string>
+    <string name="titulo">ARMARIO</string>
+    <string name="nuevo">Engadir prenda</string>
+</resources>

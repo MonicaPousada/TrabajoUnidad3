@@ -1,10 +1,17 @@
 package com.example.trabajounidad3.modelo;
 
+import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
+
+import java.util.Date;
+
 public class PartesDeArriba extends Ropa {
     private String corte;
 
-    public PartesDeArriba(String nombre, String color, String talla, String corte) {
-        super(nombre, color, talla);
+    public PartesDeArriba(int idImagen, String color, String talla, String nombre, String tipo, Date fecha, String corte) {
+        super(idImagen, color, talla, nombre, tipo, fecha);
         this.corte = corte;
     }
 
@@ -15,4 +22,5 @@ public class PartesDeArriba extends Ropa {
     public void setCorte(String corte) {
         this.corte = corte;
     }
+
 }

@@ -16,12 +16,13 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@android:drawable/btn_dialog" />
 
     <LinearLayout
-        android:id="@+id/vertical"
-        android:layout_width="393dp"
-        android:layout_height="60dp"
+        android:id="@+id/vertical1"
+        android:layout_width="394dp"
+        android:layout_height="72dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
         android:orientation="vertical"
@@ -37,27 +38,27 @@
         <LinearLayout
             android:id="@+id/horizontal"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="53dp"
             android:orientation="horizontal">
 
             <Switch
                 android:id="@+id/arriba"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="@string/arriba" />
 
             <Switch
                 android:id="@+id/abajo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="@string/abajo" />
 
             <Switch
                 android:id="@+id/zapatos"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="@string/zapatos" />
 
@@ -65,9 +66,15 @@
 
     </LinearLayout>
 
-    <ListView
-        android:layout_width="393dp"
-        android:layout_height="726dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="126dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vista"
+        android:layout_width="394dp"
+        android:layout_height="728dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vertical1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

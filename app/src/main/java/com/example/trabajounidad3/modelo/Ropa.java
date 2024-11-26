@@ -1,14 +1,22 @@
 package com.example.trabajounidad3.modelo;
 
+import java.util.Date;
+
 public class Ropa {
+    private int idImagen;
+    private Date fecha;
+    private String tipo;
     private String nombre;
     private String talla;
     private String color;
 
-    public Ropa(String nombre, String color, String talla) {
-        this.nombre = nombre;
+    public Ropa(int idImagen, String color, String talla, String nombre, String tipo, Date fecha) {
+        this.idImagen = idImagen;
         this.color = color;
         this.talla = talla;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.fecha = fecha;
     }
 
     public String getNombre() {
@@ -33,5 +41,29 @@ public class Ropa {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public int getIdImagen() {
+        return idImagen;
+    }
+
+    public void setIdImagen(int idImagen) {
+        this.idImagen = idImagen;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 }

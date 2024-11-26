@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    adaptador = new Adaptador(prendas);
+                    adaptador = new Adaptador(prendasSwitch);
                     rvPrendas.setAdapter(adaptador);
                     Log.i(TAG, "Creando el adaptador y pasándoselo a la RecyclerView");
                 }
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                                 Log.i(TAG, "Eliminando prendas del array");
                             }
                         }
-                        adaptador = new Adaptador(prendas);
+                        adaptador = new Adaptador(prendasSwitch);
                         rvPrendas.setAdapter(adaptador);
                         Log.i(TAG, "Creando el adaptador y pasándoselo a la RecyclerView");
                     }
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    adaptador = new Adaptador(prendas);
+                    adaptador = new Adaptador(prendasSwitch);
                     rvPrendas.setAdapter(adaptador);
                     Log.i(TAG, "Creando el adaptador y pasándoselo a la RecyclerView");
                 }
@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                                 Log.i(TAG, "Eliminando prendas del array");
                             }
                         }
-                        adaptador = new Adaptador(prendas);
+                        adaptador = new Adaptador(prendasSwitch);
                         rvPrendas.setAdapter(adaptador);
                         Log.i(TAG, "Creando el adaptador y pasándoselo a la RecyclerView");
                     }

@@ -88,10 +88,12 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RopaViewHolder>{
         holder.boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Crear un objeto Date con la fecha actual
+//Crear un objeto Date con la fecha actual
                 Date fechaActual = new Date();
 
                 prenda.setFecha(fechaActual);
+//Lanzar toast informando
+                Toast.makeText(view.getContext(), "Registro de uso guardado correctamente.", Toast.LENGTH_SHORT).show();
             }
         });
 

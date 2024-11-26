@@ -32,14 +32,13 @@ import com.example.trabajounidad3.modelo.Zapatos;
 import com.example.trabajounidad3.utils.Adaptador;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
     private Switch arriba;
     private Switch abajo;
     private Switch zapatos;
-    private String TAG = "EJEMPLO";
+    private final String TAG = "EJEMPLO";
     private Adaptador adaptador;
 
     @Override

@@ -33,6 +33,7 @@ import com.example.trabajounidad3.utils.Adaptador;
 
 import java.util.ArrayList;
 
+// prueba
 public class MainActivity extends AppCompatActivity {
 
     private Switch arriba;

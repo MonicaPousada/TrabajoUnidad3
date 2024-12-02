@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+
 //Si se desactiva compruebo otras cosas
                 else{
 //Si hay otros Switch activos borro las prendas de este del array y muestro las que siguen filtradas por otros Switch

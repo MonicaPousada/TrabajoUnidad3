@@ -1,5 +1,6 @@
 package com.example.trabajounidad3.vista;
 
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private final String TAG = "EJEMPLO";
     private Adaptador adaptador;
 
-    // comentario
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        // Establecer orientación según el sensor del dispositivo
+        this.setRequestedOrientation(
+                ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+        // Establecer la orientación en vertical
+        //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        // Establecer la orientación en horizontal
+        //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
 //Creo un array con prendas para usar la aplicación
@@ -81,9 +88,16 @@ public class MainActivity extends AppCompatActivity {
         ArrayList <Ropa> prendasSwitch = new ArrayList<>();
 
         adaptador = new Adaptador(prendas);
-
         RecyclerView rvPrendas = findViewById(R.id.vista);
-        rvPrendas.setLayoutManager(new LinearLayoutManager(this));
+
+        int orientacion = getResources().getConfiguration().orientation;
+
+        if(orientacion==ActivityInfo.SCREEN_ORIENTATION_PORTRAIT){
+            rvPrendas.setLayoutManager(new LinearLayoutManager(this));
+        }
+        else{
+            rvPrendas.setLayoutManager(new GridLayoutManager(this, 2));
+        }
 
         rvPrendas.setAdapter(adaptador);
         Log.i(TAG, "Creando el adaptador y añadiéndoselo a la vista");

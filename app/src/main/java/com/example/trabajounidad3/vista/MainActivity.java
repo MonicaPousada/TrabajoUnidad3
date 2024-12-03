@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
 //Creo un array con prendas para usar la aplicación
         ArrayList <Ropa> prendas = new ArrayList<>();
 

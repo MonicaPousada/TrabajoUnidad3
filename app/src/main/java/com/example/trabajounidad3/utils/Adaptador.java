@@ -21,6 +21,8 @@ import com.example.trabajounidad3.modelo.PartesDeAbajo;
 import com.example.trabajounidad3.modelo.PartesDeArriba;
 import com.example.trabajounidad3.modelo.Ropa;
 import com.example.trabajounidad3.modelo.Zapatos;
+import com.example.trabajounidad3.vista.MainActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -93,7 +95,15 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RopaViewHolder>{
 
                 prenda.setFecha(fechaActual);
 //Lanzar toast informando
-                Toast.makeText(view.getContext(), "Registro de uso guardado correctamente.", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(view.getContext(), "Registro de uso guardado correctamente.", Toast.LENGTH_SHORT).show();
+                Snackbar snackbar = Snackbar.make(view,  "Registro de uso.", Snackbar.LENGTH_SHORT);
+                snackbar.setAction("Cancelar registro", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(view.getContext(), "Se ha cancelado el registro", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                snackbar.show();
             }
         });
 
@@ -109,6 +119,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RopaViewHolder>{
 //Si no hay fecha, es decir, si no se ha usado, mostrar un mensaje indicando que nunca se ha usado
                 Toast.makeText(view.getContext(), "La prenda nunca ha sido usada.", Toast.LENGTH_SHORT).show();
             }
+
+
         });
 
     }

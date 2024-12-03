@@ -8,11 +8,16 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.PopupMenu;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -30,10 +35,11 @@ import com.example.trabajounidad3.modelo.PartesDeArriba;
 import com.example.trabajounidad3.modelo.Ropa;
 import com.example.trabajounidad3.modelo.Zapatos;
 import com.example.trabajounidad3.utils.Adaptador;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-// prueba
 public class MainActivity extends AppCompatActivity {
 
     private Switch arriba;
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private Switch zapatos;
     private final String TAG = "EJEMPLO";
     private Adaptador adaptador;
+    private int idSwitchMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
         abajo = findViewById(R.id.abajo);
         zapatos = findViewById(R.id.zapatos);
         Log.i(TAG, "Trayendo los Switch de la vista");
+
+        registerForContextMenu(arriba);
+        registerForContextMenu(abajo);
+        registerForContextMenu(zapatos);
+
 
 //Creo un On Checked Change Listener para el Switch
         arriba.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -255,6 +267,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                Toast.makeText(MainActivity.this, "Se ha seleccionado la opción "+tab.getText()+" del TabLayout", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        TextView tv = findViewById(R.id.filtros);
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopUpMenu(view);
+            }
+        });
+
 
     }
 
@@ -271,10 +310,71 @@ public class MainActivity extends AppCompatActivity {
 //Gestiono la selección de la opción del menú.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(this, "Se ha seleccionado la opción '"+item.getTitle()+"'. Esta opción estará disponible próximamente", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Se ha seleccionado la opción '"+item.getTitle()+"'. Esta opción estará disponible próximamente", Toast.LENGTH_SHORT).show();
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.main), "Se ha seleccionado la opción '"+item.getTitle()+"'. Esta opción estará disponible próximamente", Snackbar.LENGTH_SHORT);
+        snackbar.setAction("Deshacer", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Se ha seleccionado la opción de deshacer", Toast.LENGTH_SHORT).show();
+            }
+        });
+        snackbar.show();
         Log.i(TAG, "En el metodo onOptionsItemSelected lanzando el toast");
         return true;
     }
+
+
+    public void showPopUpMenu(View view){
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater menuInflater = popupMenu.getMenuInflater();
+        menuInflater.inflate(R.menu.menu_filtros, popupMenu.getMenu());
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                TextView tv;
+                Toast.makeText(MainActivity.this, "Proximamente habrá más filtros", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+        popupMenu.show();
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
+        menu.setHeaderTitle("Opciones");
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_switch, menu);
+        idSwitchMenu=v.getId();
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.activar){
+            if(idSwitchMenu==R.id.arriba){
+                arriba.setChecked(true);
+            } else if (idSwitchMenu==R.id.abajo) {
+                abajo.setChecked(true);
+            }
+            else{
+                zapatos.setChecked(true);
+            }
+        }
+        else{
+            if(idSwitchMenu==R.id.arriba){
+                arriba.setChecked(false);
+            } else if (idSwitchMenu==R.id.abajo) {
+                abajo.setChecked(false);
+            }
+            else{
+                zapatos.setChecked(false);
+            }
+        }
+
+        return true;
+    }
+
+
 }
 
 

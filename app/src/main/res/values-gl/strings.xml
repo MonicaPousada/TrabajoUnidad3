@@ -8,4 +8,8 @@
     <string name="btnUso">Rexistrar uso</string>
     <string name="titulo">ARMARIO</string>
     <string name="nuevo">Engadir prenda</string>
+    <string name="Armario">Armario</string>
+    <string name="masFiltros">Máis filtros.</string>
+    <string name="switchActivar">Activar switch</string>
+    <string name="switchDesactivar">Desactivar switch</string>
 </resources>

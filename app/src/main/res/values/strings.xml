@@ -7,5 +7,9 @@
     <string name="btnUso">Registrar \nuso</string>
     <string name="titulo">ARMARIO</string>
     <string name="nuevo">Añadir prenda</string>
+    <string name="Armario">Armario</string>
+    <string name="masFiltros">Más filtros.</string>
+    <string name="switchActivar">Activar switch</string>
+    <string name="switchDesactivar">Desactivar switch</string>
 
 </resources>

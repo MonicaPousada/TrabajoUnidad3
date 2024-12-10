@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
 //Creo un array con prendas para usar la aplicación
         ArrayList <Ropa> prendas = new ArrayList<>();
 

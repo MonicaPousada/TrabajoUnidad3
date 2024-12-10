@@ -1,8 +1,8 @@
 package com.example.trabajounidad3.modelo;
-
+import java.io.Serializable;
 import java.util.Date;
 
-public class Ropa {
+public class Ropa implements Serializable {
     private int idImagen;
     private Date fecha;
     private String tipo;
@@ -66,4 +66,5 @@ public class Ropa {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
 }

@@ -7,5 +7,7 @@
     <string name="btnUso">Registrar \nuso</string>
     <string name="titulo">ARMARIO</string>
     <string name="nuevo">Añadir prenda</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

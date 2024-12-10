@@ -55,6 +55,12 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.RopaViewHolder>{
 //Establecer la imagen correspondiente en el ImageView
         holder.imagen.setImageResource(prenda.getIdImagen());
 
+        //Pattermatching
+//        switch (prenda) {
+//            case  PartesDeArriba var:
+//                break;
+//
+//        }
 //Verificar el tipo de la prenda y establecer la información de ella dependiendo de la clase en el TextView dándole estilo
         if (prenda instanceof PartesDeArriba){
             String nom = prenda.getNombre();

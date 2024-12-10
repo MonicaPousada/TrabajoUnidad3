@@ -5,9 +5,10 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class PartesDeArriba extends Ropa {
+public class PartesDeArriba extends Ropa implements Serializable {
     private String corte;
 
     public PartesDeArriba(int idImagen, String color, String talla, String nombre, String tipo, Date fecha, String corte) {

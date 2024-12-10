@@ -5,9 +5,10 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class PartesDeAbajo extends Ropa {
+public class PartesDeAbajo extends Ropa implements Serializable {
     private String corte;
     private String tiro;
 

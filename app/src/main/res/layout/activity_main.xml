@@ -69,8 +69,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.example.trabajounidad3.FragmentRecyclerView"
-        android:layout_width="394dp"
-        android:layout_height="745dp"
+        android:layout_width="400dp"
+        android:layout_height="743dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

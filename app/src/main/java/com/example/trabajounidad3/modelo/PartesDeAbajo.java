@@ -1,13 +1,15 @@
 package com.example.trabajounidad3.modelo;
 
 import android.graphics.Typeface;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 
 import java.util.Date;
 
-public class PartesDeAbajo extends Ropa {
+public class PartesDeAbajo extends Ropa implements Parcelable {
     private String corte;
     private String tiro;
 
@@ -16,6 +18,36 @@ public class PartesDeAbajo extends Ropa {
         this.corte = corte;
         this.tiro = tiro;
     }
+
+    protected PartesDeAbajo(Parcel in) {
+        super(in);
+        corte = in.readString();
+        tiro = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(corte);
+        dest.writeString(tiro);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<PartesDeAbajo> CREATOR = new Creator<PartesDeAbajo>() {
+        @Override
+        public PartesDeAbajo createFromParcel(Parcel in) {
+            return new PartesDeAbajo(in);
+        }
+
+        @Override
+        public PartesDeAbajo[] newArray(int size) {
+            return new PartesDeAbajo[size];
+        }
+    };
 
     public String getCorte() {
         return corte;

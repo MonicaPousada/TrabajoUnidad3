@@ -1,8 +1,15 @@
 package com.example.trabajounidad3.modelo;
 
+import static com.example.trabajounidad3.utils.AdaptadorFechas.exportDate;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.util.Date;
 
-public class Ropa {
+public class Ropa implements Parcelable {
     private int idImagen;
     private Date fecha;
     private String tipo;
@@ -65,5 +72,21 @@ public class Ropa {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeInt(idImagen);
+        parcel.writeString(exportDate(fecha));
+        parcel.writeString(tipo);
+        parcel.writeString(nombre);
+        parcel.writeString(talla);
+        parcel.writeString(color);
+
     }
 }

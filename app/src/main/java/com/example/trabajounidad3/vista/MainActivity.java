@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     private final String TAG = "EJEMPLO";
     private Adaptador adaptador;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

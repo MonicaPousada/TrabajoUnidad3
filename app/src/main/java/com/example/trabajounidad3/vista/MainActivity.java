@@ -16,6 +16,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -24,13 +25,17 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.trabajounidad3.AnadirPrenda;
 import com.example.trabajounidad3.FragmentRecyclerView;
 import com.example.trabajounidad3.R;
+import com.example.trabajounidad3.borrarPrendas;
 import com.example.trabajounidad3.modelo.PartesDeAbajo;
 import com.example.trabajounidad3.modelo.PartesDeArriba;
 import com.example.trabajounidad3.modelo.Ropa;
 import com.example.trabajounidad3.modelo.Zapatos;
 import com.example.trabajounidad3.utils.Adaptador;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
@@ -76,10 +81,34 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.i(TAG, "Creando el array de prendas");
 
-
         Bundle bundle = new Bundle();
         bundle.putSerializable("arrayPrendas", prendas);
+
         getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).add(R.id.fragmentContainerView, FragmentRecyclerView.class, bundle).commit();
+
+        BottomNavigationView menuInferior = findViewById(R.id.menuInferior);
+
+        menuInferior.inflateMenu(R.menu.menu_toolbar);
+        menuInferior.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.visualizarPrendas){
+                    getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainerView, FragmentRecyclerView.class, bundle).commit();
+                    return true;
+                }
+                else if (item.getItemId()==R.id.nuevaPrenda) {
+                    getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainerView, AnadirPrenda.class, bundle).commit();
+                    return true;
+                }
+                else{
+                    getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainerView, borrarPrendas.class, bundle).commit();
+                    return true;
+                }
+            }
+        });
+
+
+
 
 
 
@@ -300,6 +329,8 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "En el metodo onOptionsItemSelected lanzando el toast");
         return true;
     }
+
+
 }
 
 

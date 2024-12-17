@@ -8,4 +8,7 @@
     <string name="btnUso">Rexistrar uso</string>
     <string name="titulo">ARMARIO</string>
     <string name="nuevo">Engadir prenda</string>
+    <string name="visualizar">Visualizar prendas.</string>
+    <string name="anadir">Engadir prenda.</string>
+    <string name="borrar">Borrar prendas.</string>
 </resources>
